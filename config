@@ -37,3 +37,4 @@ bind 127.0.0.1 172.17.0.1 -::1
 
 sudo ln -s /etc/nginx/sites-available/travellist /etc/nginx/sites-enabled/
 sudo systemctl reload nginx
+sudo chown -R www-data.www-data /var/www/travellist/storage
