@@ -14,3 +14,21 @@ network:
 
 
 https://packetpushers.net/ubuntu-extend-your-default-lvm-space/
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+
+sudo systemctl restart mysql
+
+sudo nano /etc/mongod.conf
+
+net:
+  port: 27017
+  bindIp: 127.0.0.1,172.17.0.1
+
+sudo systemctl start mongod
+sudo systemctl daemon-reload
+sudo systemctl status mongod
+sudo systemctl enable mongod
+
+sudo nano /etc/redis/redis.conf
+bind 127.0.0.1 172.17.0.1 -::1
+/etc/init.d/redis-server restart
