@@ -34,3 +34,4 @@ bind 127.0.0.1 172.17.0.1 -::1
 /etc/init.d/redis-server restart
 
 sudo usermod -aG docker ${USER}
+sudo chown -R testuser:testuser /var/www/test/public_html
