@@ -16,6 +16,8 @@ network:
 https://packetpushers.net/ubuntu-extend-your-default-lvm-space/
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 
+172.19.0.3
+
 sudo systemctl restart mysql
 
 sudo nano /etc/mongod.conf
@@ -33,7 +35,5 @@ sudo nano /etc/redis/redis.conf
 bind 127.0.0.1 172.17.0.1 -::1
 /etc/init.d/redis-server restart
 
-sudo usermod -aG docker ${USER}
-sudo chown -R testuser:testuser /var/www/test/public_html
-
-sudo systemctl restart nginx
+sudo ln -s /etc/nginx/sites-available/travellist /etc/nginx/sites-enabled/
+sudo systemctl reload nginx
